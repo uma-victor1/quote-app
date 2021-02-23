@@ -1,2 +1,1 @@
-node_modules
-app.js
+./backend/node_modules
