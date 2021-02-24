@@ -7,14 +7,15 @@ const app = express()
 
 // database
 
-const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://uma-victor1:jhon3165869@quote-app.ba0sr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log('MongoDB Connected…')
+  })
+  .catch(err => console.log(err))
 
 // middleware
 app.use(bodyParser.json())
