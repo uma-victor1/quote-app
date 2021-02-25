@@ -25,6 +25,9 @@ app.get("/", (req,res)=>{
     res.send("my home page dey show sha")
 })
 
+const QuotesRoute = require('./routes/Quotes')
+app.use('/quotes', QuotesRoute)
+
 //start server
 app.listen(3000, ()=>{
     console.log("listeniing at port:3000")
