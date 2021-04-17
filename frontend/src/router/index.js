@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import All from "../views/All.vue";
-
+import Quote from "../views/Quote.vue";
 const routes = [
   {
     path: "/",
@@ -11,7 +11,12 @@ const routes = [
   {
     path: "/all",
     name: "All",
-    component: All,
+    component: All
+  },
+  {
+    path: "/quote/:id",
+    name: "single quote",
+    component: Quote
   }
 ];
 
